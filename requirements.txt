@@ -16,6 +16,7 @@ repoze.lru==0.6
 repoze.tm2==1.0
 transaction==1.4.1
 translationstring==1.1
+uca==1.1
 venusian==1.0a7
 wsgiref==0.1.2
 zope.deprecation==4.0.2
