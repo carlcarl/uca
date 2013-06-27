@@ -1,0 +1,97 @@
+body
+{
+	background-image: url('/static/images/dust.png');
+	font-family: 'Vollkorn', serif;
+}
+
+h1 small
+{
+	font-size: 0.1em;
+}
+
+.navbar .brand
+{
+	color: #000000;
+	font-weight: bold;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 30px rgba(255, 255, 255, 0.125);
+}
+
+#content
+{
+	text-align: center;
+	margin-top: 15%;
+}
+
+#title
+{
+	font-size: 1400%;
+}
+
+#submit-form
+{
+	margin-top: 10%;
+}
+
+#link
+{
+	border-color: #CCCCCC;
+	box-shadow: none;
+}
+
+#submit
+{
+	font-weight: bold;
+}
+
+#loading
+{
+	margin-top: 10%;
+	visibility: hidden;
+	opacity: 0;
+}
+
+#loading.show
+{
+	visibility: visible;
+	opacity: 1;
+}
+
+#response
+{
+	margin-top: 8%;
+	opacity: 0;
+}
+
+#response, #response a
+{
+	font-family: "Hiragino Sans GB", "Microsoft Jhenghei", "Heiti TC", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Arial", "Sans";
+	font-size: x-large;
+	line-height: 1.4em;
+}
+
+#response.show
+{
+	opacity: 1;
+	transition: opacity 1s ease-in-out;
+	-webkit-transition: opacity 1s ease-in-out;
+}
+
+@media(max-width: 480px)
+{
+	#title
+	{
+		font-size: 500%;
+	}
+	small
+	{
+		display: none;
+	}
+	submit-form
+	{
+		margin-top: 10%;
+	}
+	#response, #response a
+	{
+		font-size: medium;
+	}
+}

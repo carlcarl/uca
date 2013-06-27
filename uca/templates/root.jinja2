@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" manifest="manifest.mf">
+	<head>
+		<meta charset=utf-8">
+		<title>uca.tw - short url service</title>
+		<link rel="shortcut icon" href="{{'uca:static/favicon.ico'|static_url}}" />
+		<link rel="stylesheet" href="{{'uca:static/bootstrap/css/bootstrap.min.css'|static_url}}" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="{{'uca:static/bootstrap/css/bootstrap-responsive.css'|static_url}}" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="{{'uca:static/css/style.css'|static_url}}" type="text/css" media="screen" charset="utf-8" />
+		<link href='http://fonts.googleapis.com/css?family=Vollkorn:700,400' rel='stylesheet' type='text/css'>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-fix-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="brand" href="./">uca</a>
+				</div>
+			</div>
+		</div>
+		<div id="container" class="container-fluid">
+			<div class="row-fluid">
+				<div id="content" class="content span6 offset3">
+					<h1 id="title">uca<small> short url service</small></h1>
+					<form id="submit-form">
+						<div class="input-append">
+							<input type="url" id="link" class="input-xxlarge" name="link" placeholder="http://" value="http://"/>
+							<button type="submit" id="submit" class="btn btn-danger" name="submit"><i class="icon-chevron-down icon-white"></i></button>
+						</div>
+					</form>
+					<div id="loading">
+						<img src="{{'uca:static/images/loading.gif'|static_url}}" />
+					</div>
+					<div id="response">
+					</div>
+				</div>
+			</div>
+		</div>
+		 
+		<script src="{{'uca:static/js/jquery-1.8.3.min.js'|static_url}}"></script>
+		<script src="{{'uca:static/bootstrap/js/bootstrap.min.js'|static_url}}"></script>
+		<script src="{{'uca:static/js/index.js'|static_url}}"></script>
+	</body>
+</html>

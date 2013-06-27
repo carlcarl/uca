@@ -1,0 +1,16 @@
+1.1
+===============
+
+- Add API url
+- UI improvement
+- Some bug and syntax error fix
+
+1.0
+===============
+
+- First offcial release
+
+0.1
+===============
+
+- Initial version
