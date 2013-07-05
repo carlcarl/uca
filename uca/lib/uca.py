@@ -39,8 +39,9 @@ def get_hash_value(link):
     ]
     c = []
     for i in range(6):
-        # Get 6 chars each with 5 bytes, change these chars from binary to
-        # decimal and use the number as index to get the char from charList
+        # Convert 5 bytes(0 or 1) in bits array to a decimal number
+        # Use the decimal number as index to get the desire char from charList
+        # The last 2 bytes in the bits array will be ignored
         c.append(charList[int(bits[(5 * i):(5 * (i + 1))], 2)])
     hashLink = ''
     for i in range(6):
@@ -53,7 +54,7 @@ def get_bit_string(hashSlice):
     Args:
         hashSlice: the string contains 1~9 and 'a'~'f', the length should be 8
     Returns:
-        Bit string of hashSlice
+        Bit string of hashSlice, length should be 32(8 * 4)
     """
     num = 0
     ord_0 = ord('0')
