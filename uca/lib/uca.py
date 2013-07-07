@@ -45,7 +45,7 @@ def get_hash_value(link):
         c.append(charList[int(bits[(5 * i):(5 * (i + 1))], 2)])
     hashLink = ''
     for i in range(6):
-        hashLink += (str(c[i]))
+        hashLink = ''.join(c)
     return hashLink
 
 
