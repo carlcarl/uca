@@ -43,7 +43,7 @@ def main(global_config, **settings):
     config.registry.settings['db_conn'] = conn
     config.registry.settings['db_url'] = db_url
 
-    if settings['dev']:
+    if settings['dev'] == 'true':
         def add_global(event):
             event['dev'] = True
         config.add_subscriber(add_global, 'pyramid.events.BeforeRender')
