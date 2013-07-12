@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"{% if dev is sameas false %} manifest="static/manifest.mf"{% endif %}>
 	<head>
 		<meta charset=utf-8">
 		<title>uca.tw - short url service</title>
@@ -42,7 +42,7 @@
 		</div>
 		 
 		<script src="static/js/index.min.js"></script>
-		{% if dev %}
+		{% if dev is sameas true %}
 		<script src="http://127.0.0.1:35729/livereload.js"></script>
 		{% endif %}
 	</body>
