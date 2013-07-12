@@ -6,7 +6,7 @@ from lib.uca import validate_url
 from lib.uca import UrlValidate
 
 
-@view_config(route_name='root', renderer='templates/root.jinja2', request_method='GET', http_cache=(86400))
+@view_config(route_name='root', renderer='templates/root.jinja2', request_method='GET')
 def view_root(request):
     return {}
 

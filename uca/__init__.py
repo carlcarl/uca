@@ -31,7 +31,7 @@ def main(global_config, **settings):
 
     config = Configurator(settings=settings)
     config.include('pyramid_jinja2')
-    config.add_static_view('static', 'uca:static')
+    config.add_static_view('static', 'uca:static/dist')
     config.add_route('root', '')
     config.add_route('api1', '/api/1/')
     config.add_renderer('jsonp', JSONP(param_name='callback'))
@@ -42,6 +42,11 @@ def main(global_config, **settings):
                               port=db_url.port)
     config.registry.settings['db_conn'] = conn
     config.registry.settings['db_url'] = db_url
+
+    if settings['dev']:
+        def add_global(event):
+            event['dev'] = True
+        config.add_subscriber(add_global, 'pyramid.events.BeforeRender')
 
     config.scan()
 

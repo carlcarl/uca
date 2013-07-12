@@ -1,0 +1,12 @@
+CACHE MANIFEST
+# v8
+
+CACHE:
+js/index.min.js
+css/style.min.css
+images/dust.png
+images/loading.gif
+img/glyphicons-halflings-white.png
+
+NETWORK:
+*
