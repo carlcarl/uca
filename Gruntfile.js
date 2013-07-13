@@ -13,7 +13,7 @@ module.exports = function (grunt) {
 			},
 			dist: {
 				files: {
-					'dist/js/index.min.js': ['src/js/jquery-1.8.3.min.js', 'src/js/bootstrap.min.js', 'src/js/index.js']
+					'uca/static/dist/js/index.min.js': ['uca/static/src/js/jquery-1.8.3.min.js', 'uca/static/src/js/bootstrap.min.js', 'uca/static/src/js/index.js']
 				}
 			}
 		},
@@ -23,31 +23,31 @@ module.exports = function (grunt) {
 			},
 			compress: {
 				files: {
-					'dist/css/style.css': [
-						'src/css/bootstrap.css',
-						'src/css/bootstrap-responsive.css',
-						'src/css/style.css'
+					'uca/static/dist/css/style.css': [
+						'uca/static/src/css/bootstrap.css',
+						'uca/static/src/css/bootstrap-responsive.css',
+						'uca/static/src/css/style.css'
 					]
 				}
 			},
 			minify: {
 				expand: true,
-				cwd: 'dist/css/',
+				cwd: 'uca/static/dist/css/',
 				src: ['*.css', '!*.min.css'],
-				dest: 'dist/css/',
+				dest: 'uca/static/dist/css/',
 				ext: '.min.css'
 			}
 		},
 		watch: {
 			css: {
-				files: 'src/css/*.css',
+				files: 'uca/static/src/css/*.css',
 				tasks: ['cssmin'],
 				options: {
 					livereload: true
 				}
 			},
 			js: {
-				files: 'src/js/*.js',
+				files: 'uca/static/src/js/*.js',
 				tasks: ['uglify'],
 				options: {
 					livereload: true
