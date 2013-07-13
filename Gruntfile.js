@@ -6,12 +6,7 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		uglify: {
-			options: {
-				mangle: {
-					except: ['jQuery']
-				}
-			},
-			dist: {
+			release: {
 				files: {
 					'uca/static/dist/js/index.min.js': ['uca/static/src/js/jquery-1.8.3.min.js', 'uca/static/src/js/bootstrap.min.js', 'uca/static/src/js/index.js']
 				}
@@ -21,21 +16,14 @@ module.exports = function (grunt) {
 			options: {
 				keepSpecialComments: 0
 			},
-			compress: {
+			release: {
 				files: {
-					'uca/static/dist/css/style.css': [
+					'uca/static/dist/css/style.min.css': [
 						'uca/static/src/css/bootstrap.css',
 						'uca/static/src/css/bootstrap-responsive.css',
 						'uca/static/src/css/style.css'
 					]
 				}
-			},
-			minify: {
-				expand: true,
-				cwd: 'uca/static/dist/css/',
-				src: ['*.css', '!*.min.css'],
-				dest: 'uca/static/dist/css/',
-				ext: '.min.css'
 			}
 		},
 		watch: {
