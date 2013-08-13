@@ -3,22 +3,19 @@ import os
 from pyramid.config import Configurator
 from pyramid.renderers import JSONP
 
-from pyramid.events import NewRequest
-from pyramid.events import subscriber
 from urlparse import urlparse
 from gridfs import GridFS
 import pymongo
 
 
-@subscriber(NewRequest)
-def add_mongo_db(event):
-    settings = event.request.registry.settings
+def add_mongo_db(request):
+    settings = request.registry.settings
     db_url = settings['db_url']
     db = settings['db_conn'][db_url.path[1:]]
     if db_url.username and db_url.password:
         db.authenticate(db_url.username, db_url.password)
-    event.request.db = db
-    event.request.fs = GridFS(db)
+    request.db = db
+    request.fs = GridFS(db)
 
 
 def main(global_config, **settings):
@@ -42,6 +39,7 @@ def main(global_config, **settings):
                               port=db_url.port)
     config.registry.settings['db_conn'] = conn
     config.registry.settings['db_url'] = db_url
+    config.add_request_method(add_mongo_db, 'db', reify=True)
 
     if settings['dev'] == 'true':
         def add_global(event):
